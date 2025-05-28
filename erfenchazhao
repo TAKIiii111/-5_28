@@ -1,0 +1,27 @@
+
+//写一个函数，实现整型有序数组的二分查找  
+int efcz(int array[], int x, int num)  
+{  
+    int left = 0;  
+    int right = num - 1;  
+
+    while (left <= right)  
+    {  
+        int mid = left + (right - left) / 2;  
+
+        if (array[mid] > x)  
+        {  
+            right = mid - 1; // 调整右边界  
+        }  
+        else if (array[mid] < x)  
+        {  
+            left = mid + 1; // 调整左边界  
+        }  
+        else  
+        {  
+            return mid; // 找到目标值，返回下标  
+        }  
+    }  
+
+    return -1; // 未找到目标值  
+}  
